@@ -69,7 +69,8 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     {expand: true, flatten: true, src: ['src/.htaccess'], dest: 'build/', filter: 'isFile'},
-                    {expand: true, flatten: true, src: ['bower_components/bootstrap/dist/fonts/*'], dest: 'build/assets/fonts/', filter: 'isFile'}
+                    {expand: true, flatten: true, src: ['bower_components/bootstrap/dist/fonts/*'], dest: 'build/assets/fonts/', filter: 'isFile'},
+                    {expand: true, flatten: true, src: ['src/assets/img/infographics/*'], dest: 'build/assets/img/infographics/', filter: 'isFile'}
                 ]
             }
         },
@@ -86,7 +87,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src/',
-                    src: ['**/*.{png,jpg,gif,ico}'],
+                    src: ['**/*.{png,jpg,gif,ico}', '!src/assets/img/infographics/*'],
                     dest: 'build'
                 }]
             }
@@ -118,6 +119,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.registerTask('build', function () {
         grunt.task.run(['jshint', 'clean:build', 'concat', 'uglify', 'cssmin', 'htmlmin', 'copy', 'imagemin', 'remove']);
-    }); 
+    });
     grunt.registerTask('default', ['watch']);
 };
