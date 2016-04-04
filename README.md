@@ -1,5 +1,9 @@
 # meta
 
+
+### * Development of the website from this repository is being discontinued, you may follow up [here](https://github.com/xpostudio4/metacommunity)
+
+
 Setup and installation
 ==============
 
@@ -35,7 +39,7 @@ Watching
 --------------
 	grunt watch
 
-Watches any changes made to code files inside the src/ folder. If the watcher sees a change it starts the building procces
+Watches any changes made to code files inside the src/ folder. If the watcher sees a change it starts the building process
 
 Running
 --------------
